@@ -417,6 +417,7 @@
             display: flex;
             flex-wrap: wrap;
             gap: 10px;
+            margin-bottom: 20px;
         }
 
         .tech-tag {
@@ -426,6 +427,66 @@
             border-radius: 15px;
             font-size: 0.9rem;
             border: 1px solid rgba(100, 255, 218, 0.2);
+        }
+
+        .project-links {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(100, 255, 218, 0.4);
+            color: #64ffda;
+            background: rgba(100, 255, 218, 0.05);
+        }
+
+        .project-link:hover {
+            background: #64ffda;
+            color: #0f0f23;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(100, 255, 218, 0.3);
+        }
+
+        /* Live badge */
+        .live-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            background: rgba(100, 255, 218, 0.15);
+            border: 1px solid rgba(100, 255, 218, 0.3);
+            color: #64ffda;
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 3px 10px;
+            border-radius: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-left: 10px;
+            vertical-align: middle;
+        }
+
+        .live-badge::before {
+            content: '';
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: #64ffda;
+            animation: livePulse 1.5s infinite;
+        }
+
+        @keyframes livePulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.3; }
         }
 
         /* Contact Section */
@@ -570,10 +631,13 @@
         .skill-card:nth-child(2) { animation-delay: 0.2s; }
         .skill-card:nth-child(3) { animation-delay: 0.3s; }
         .skill-card:nth-child(4) { animation-delay: 0.4s; }
+        .skill-card:nth-child(5) { animation-delay: 0.5s; }
+        .skill-card:nth-child(6) { animation-delay: 0.6s; }
 
         .project-card:nth-child(1) { animation-delay: 0.1s; }
         .project-card:nth-child(2) { animation-delay: 0.2s; }
         .project-card:nth-child(3) { animation-delay: 0.3s; }
+        .project-card:nth-child(4) { animation-delay: 0.4s; }
     </style>
 </head>
 <body>
@@ -626,22 +690,32 @@
                 <div class="skill-card">
                     <div class="skill-icon">🌐</div>
                     <h3 class="skill-title">Frontend Development</h3>
-                    <p class="skill-description">HTML, CSS, JavaScript - Creating responsive and interactive user interfaces with modern design principles.</p>
+                    <p class="skill-description">HTML, CSS, JavaScript & React — creating responsive, interactive user interfaces with modern design principles and component-based architecture.</p>
                 </div>
                 <div class="skill-card">
                     <div class="skill-icon">⚙️</div>
                     <h3 class="skill-title">Backend Development</h3>
-                    <p class="skill-description">PHP, Cloud Firestore & SQL - Building robust server-side applications and database management systems.</p>
+                    <p class="skill-description">PHP, Cloud Firestore & SQL — building robust server-side applications and database management systems.</p>
                 </div>
                 <div class="skill-card">
                     <div class="skill-icon">📱</div>
                     <h3 class="skill-title">Mobile Development</h3>
-                    <p class="skill-description">Flutter & Firebase - Developing cross-platform mobile applications with real-time data synchronization.</p>
+                    <p class="skill-description">Flutter & Firebase — developing cross-platform mobile applications with real-time data synchronization.</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">🛒</div>
+                    <h3 class="skill-title">E-Commerce Development</h3>
+                    <p class="skill-description">Building full-featured online stores with product management, cart systems, and real-time database integration.</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">☁️</div>
+                    <h3 class="skill-title">Cloud & Deployment</h3>
+                    <p class="skill-description">Firebase, Netlify & Vercel — deploying and hosting web applications with CI/CD pipelines and cloud-based infrastructure.</p>
                 </div>
                 <div class="skill-card">
                     <div class="skill-icon">🔗</div>
                     <h3 class="skill-title">API Integration</h3>
-                    <p class="skill-description">RESTful APIs - Seamlessly connecting applications with third-party services and databases.</p>
+                    <p class="skill-description">RESTful APIs — seamlessly connecting applications with third-party services and databases.</p>
                 </div>
             </div>
         </div>
@@ -651,24 +725,76 @@
         <div class="container">
             <h2>Featured Projects</h2>
             <div class="projects-grid" id="projectContainer">
+
+                <!-- CodeRed Solutions Website -->
                 <div class="project-card">
                     <div class="project-image">🚀</div>
                     <div class="project-content">
-                        <h3 class="project-title">CodeRed Solutions Platform</h3>
-                        <p class="project-description">A comprehensive business platform showcasing our services and client portfolio. Built with modern web technologies.</p>
+                        <h3 class="project-title">
+                            CodeRed Solutions Website
+                            <span class="live-badge">Live</span>
+                        </h3>
+                        <p class="project-description">A comprehensive business website showcasing CodeRed Solutions' services and client portfolio. Built with modern web technologies and a professional design.</p>
                         <div class="project-tech">
                             <span class="tech-tag">HTML5</span>
                             <span class="tech-tag">CSS3</span>
                             <span class="tech-tag">JavaScript</span>
                             <span class="tech-tag">PHP</span>
                         </div>
+                        <div class="project-links">
+                            <a href="https://coderedsolution.netlify.app/" target="_blank" class="project-link">🌐 Visit Site</a>
+                        </div>
                     </div>
                 </div>
+
+                <!-- Prosca Consulting -->
+                <div class="project-card">
+                    <div class="project-image">💼</div>
+                    <div class="project-content">
+                        <h3 class="project-title">
+                            Prosca Consulting Website
+                            <span class="live-badge">Live</span>
+                        </h3>
+                        <p class="project-description">A static corporate website for Prosca Consulting, built with React for a fast, smooth user experience and clean professional presentation.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">CSS3</span>
+                            <span class="tech-tag">HTML5</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://proscaonline.com" target="_blank" class="project-link">🌐 Visit Site</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tala Stores -->
+                <div class="project-card">
+                    <div class="project-image">🛒</div>
+                    <div class="project-content">
+                        <h3 class="project-title">
+                            Tala Stores
+                            <span class="live-badge">Live</span>
+                        </h3>
+                        <p class="project-description">A full-featured e-commerce web application for Tala Stores, complete with product listings, cart functionality, and a Firestore-powered real-time database backend.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">HTML5</span>
+                            <span class="tech-tag">CSS3</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">Cloud Firestore</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://talastores.com" target="_blank" class="project-link">🌐 Visit Site</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- AEC Church App -->
                 <div class="project-card">
                     <div class="project-image">⛪</div>
                     <div class="project-content">
                         <h3 class="project-title">AEC Church App</h3>
-                        <p class="project-description">Cross-platform mobile application for church community with sermon streaming, event management, and member connectivity.</p>
+                        <p class="project-description">Cross-platform mobile application for a church community with sermon streaming, event management, and member connectivity.</p>
                         <div class="project-tech">
                             <span class="tech-tag">Flutter</span>
                             <span class="tech-tag">Firebase</span>
@@ -677,19 +803,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="project-card">
-                    <div class="project-image">🏨</div>
-                    <div class="project-content">
-                        <h3 class="project-title">Hotel Booking System</h3>
-                        <p class="project-description">Full-stack hotel reservation platform with room management, booking analytics, and payment processing capabilities.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">PHP</span>
-                            <span class="tech-tag">Cloud Firestore</span>
-                            <span class="tech-tag">JavaScript</span>
-                            <span class="tech-tag">Bootstrap</span>
-                        </div>
-                    </div>
-                </div>
+
             </div>
         </div>
     </section>
@@ -783,21 +897,6 @@
             }
         }
 
-        // Load and display the profile image
-        async function loadProfileImage() {
-            try {
-                const imageData = await window.fs.readFile('lungelo_graduation.jpg');
-                const base64 = btoa(String.fromCharCode(...new Uint8Array(imageData)));
-                const profileImg = document.getElementById('profileImage');
-                profileImg.src = `data:image/jpeg;base64,${base64}`;
-            } catch (error) {
-                console.log('Could not load profile image, using placeholder');
-                const profileImg = document.getElementById('profileImage');
-                profileImg.src = 'https://via.placeholder.com/180x180/64ffda/0f0f23?text=LS';
-            }
-        }
-
-        // Remove the image loading function since we're using direct paths
         createParticles();
 
         // Intersection Observer for animations
@@ -827,7 +926,6 @@
         document.querySelector('.contact-form').addEventListener('submit', function(e) {
             e.preventDefault();
             
-            // Simple form validation and feedback
             const name = document.getElementById('name').value;
             const email = document.getElementById('email').value;
             const message = document.getElementById('message').value;
@@ -838,12 +936,6 @@
             } else {
                 alert('Please fill in all fields.');
             }
-        });
-
-        // Add floating animation to skill cards
-        document.querySelectorAll('.skill-card').forEach((card, index) => {
-            card.style.animationDelay = (index * 0.1) + 's';
-            card.style.animation = 'float 6s ease-in-out infinite';
         });
 
         // Dynamic typing effect for subtitle
@@ -859,23 +951,11 @@
             }
         }
 
-        // Start typing effect after page loads
         window.addEventListener('load', () => {
             setTimeout(() => {
                 subtitle.textContent = '';
                 typeWriter();
             }, 1000);
-        });
-
-        // Add hover effects to project cards
-        document.querySelectorAll('.project-card').forEach(card => {
-            card.addEventListener('mouseenter', function() {
-                this.style.transform = 'translateY(-15px) scale(1.02) rotateX(5deg)';
-            });
-            
-            card.addEventListener('mouseleave', function() {
-                this.style.transform = 'translateY(0) scale(1) rotateX(0deg)';
-            });
         });
 
         // Add 3D tilt effect to profile image
@@ -892,4 +972,8 @@
         });
 
         profileImage.addEventListener('mouseleave', function() {
-            this.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg
+            this.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale(1)';
+        });
+    </script>
+</body>
+</html>
